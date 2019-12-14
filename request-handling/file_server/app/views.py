@@ -6,19 +6,12 @@ from dateutil import parser
 
 def file_list(request, filter_date = None):
     template_name = 'index.html'
+
     files_list = os.listdir(FILES_PATH)
     context = {
         'files': [],
-        'date': None
+        'date': filter_date
     }
-    new_date = None
-
-    if filter_date:
-        year = int(filter_date.split('-')[0])
-        month = int(filter_date.split('-')[1])
-        day = int(filter_date.split('-')[2])
-        new_date = datetime.date(year, month, day)
-        context['date'] = new_date
 
     for f in files_list:
         file_path = os.path.join(FILES_PATH, f)
@@ -27,9 +20,9 @@ def file_list(request, filter_date = None):
         file_info['name'] = f
         file_info['ctime'] = parser.parse(time.ctime(file_stat.st_ctime))
         file_info['mtime'] = parser.parse(time.ctime(file_stat.st_mtime))
-        if not new_date:
+        if not filter_date:
             context['files'].append(file_info)
-        elif new_date and new_date == file_info['ctime'].date():
+        elif filter_date and filter_date == file_info['ctime'].date():
             context['files'].append(file_info)
     return render(request, template_name, context)
 

@@ -1,6 +1,4 @@
-import datetime
-from datetime import date
-
+from datetime import datetime
 
 class DateConverter:
     regex = '[0-9]{4}-[0-9]{2}-[0-9]{2}'
@@ -10,4 +8,4 @@ class DateConverter:
         return datetime.strptime(value, self.format).date()
 
     def to_url(self, value):
-        return value.strftime(format)
+        return value.strftime(self.format)
