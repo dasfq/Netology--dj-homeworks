@@ -8,12 +8,18 @@ def home_view(request):
 
 def about_view(request):
     template_name = 'app/about.html'
-    return render(request, template_name)
+    context = {
+        "active_tab": "about"
+    }
+    return render(request, template_name, context)
 
 
 def contacts_view(request):
     template_name = 'app/contacts.html'
-    return render(request, template_name)
+    context = {
+        "active_tab": "contacts"
+    }
+    return render(request, template_name, context)
 
 
 def examples_view(request):
@@ -33,7 +39,8 @@ def examples_view(request):
         'img': 'imac.jpg'
     }]
     context = {
-        'items': items
+        'items': items,
+        "active_tab": "examples"
     }
     return render(request, template_name,
                   context)
