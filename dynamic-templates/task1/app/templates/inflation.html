@@ -1,6 +1,8 @@
+{% load new_filters %}
+
 <!DOCTYPE html>{% load static %}
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>Инфляция в России</title>
     <!--Import Google Icon Font-->
@@ -10,19 +12,27 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  </head>
+</head>
 
-  <body>
-    {% block content %}
-      <div class="row">
-        <h1 class="col s12">Инфляция в России</h1>
-        <div class="col s12 m8">
-        
-        <!-- Ваша логика -->
-
-        </div>
-      </div>
-    {% endblock %}
-
-  </body>
+<body>
+{% block content %}
+<div class="row">
+    <h1 class="col s12">Инфляция в России</h1>
+    <div class="col s12 m8">
+        <table>
+            {% for row in data %}
+            <tr>
+                {% for cell in row%}
+                <td style='background: {{cell|inflation_filter:row}}'>
+                    {{ cell }}
+                    {% if cell == '' %}-{% endif %}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}
+</body>
 </html>
