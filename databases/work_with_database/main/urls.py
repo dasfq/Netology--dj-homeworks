@@ -20,7 +20,8 @@ from django.urls import path
 import phones.views
 
 urlpatterns = [
+    path('', phones.views.show_catalog, 'index'),
     path('admin/', admin.site.urls),
-    path('catalog/', phones.views.show_catalog),
-    url(r'^catalog/(?P<slug>[\w-]+)/$', phones.views.show_product),
+    path('catalog/', phones.views.show_catalog, name='catalog'),
+    path(r'^catalog/(?P<slug>[\w-]+)/$', phones.views.show_product, name='phone_page'),
 ]

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load filters %}
 
 {% block title %}Каталог{% endblock %}
 {% block content %}
@@ -9,11 +10,17 @@
         </div>
 
         <div class="sort-block">
-            {# Здесь должен быть раздел с сортировкой #}
+            <span>Сортировать:</span><a href="{% url 'catalog' %}?sorting=name">По названию</a><a href="{% url 'catalog' %}?sorting=price">Цена по возрастанию</a><a href="{% url 'catalog' %}?sorting=-price">Цена по убыванию</a>
         </div>
 
         <div class="content">
-            {# Здесь должен отображаться каталог с телефонами #}
+            {% for item in items %}
+            <div class="item">
+                <h2><a href="{% url 'phone_page' slug=item.slug %}">{{ item.name }}</a></h2>
+                <p><span>Стоимость: {{ item.price|pricetag }}</span></p>
+                <img src="{{ item.image }}" alt="">
+            </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

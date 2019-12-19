@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load filters %}
 
 {% block title %}Телефон{% endblock %}
 {% block content %}
@@ -8,7 +9,21 @@
             <h1>Телефон</h1>
         </div>
         <div class="content">
-
+            <div class="row">
+                <div class="col">
+                    <p>Название:</p>
+                    <p>Цена:</p>
+                    <p>Дата релиза:</p>
+                    <p>Наличие LTE:</p>
+                </div>
+                <div class="col">
+                    <p>{{ item.name }}</p>
+                    <p>{{ item.price|pricetag }}</p>
+                    <p>{{ item.release_date }}</p>
+                    <p>{{ item.lte_exists|presence_filter }}</p>
+                    <p><img src="{{ item.image }}" alt="{{ item.name }}"></p>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
