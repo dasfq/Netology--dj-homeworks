@@ -6,7 +6,7 @@ class Car(models.Model):
     model = models.CharField(max_length=50)
 
     def __str__(self):
-        return f'{self.brand} {self.model}'
+        return f'{self.brand}-{self.model}'
 
     def review_count(self):
         return Review.objects.filter(car=self).count()
