@@ -4,4 +4,4 @@ from .models import Phone
 class PhoneAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(Phone)
+admin.site.register(Phone, PhoneAdmin)
