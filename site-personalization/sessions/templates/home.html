@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Угадай число{% endblock %}
-
 {% block content %}
-    <div class="container">
-        <div class="header">
-            <h1>Игра "Угадай число"</h1>
+
+        {% if not game.game.is_finished %}
+        <div>
+            <p>Загаданное число: {{ game.number_hidden }}</p>
+            <p>Второй игрок будет его угадывать. Когда угадает, вы увидите сообщение. Обновите страницу.</p>
         </div>
-    </div>
+        {% endif %}
+        </div>
+            <p>{{ game.message }}</p>
+        </div>
+
 {% endblock %}

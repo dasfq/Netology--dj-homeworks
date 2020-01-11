@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<form action="{% url 'home' %}" method="POST">
+    {% csrf_token %}
+    {% if not game.game.is_finished %}
+    <label for="number_try">Попробуйте угадать загаданное число:</label><br/>
+    <input type="text" value="" name="number_try" id="number_try">
+    <input type="submit" value="Отправить">
+    <p>Кол-во попыток: {{ game.attempt_qty }}</p>
+    {% endif %}
+    <p>Подсказка: {{ game.message }}</p>
+</form>
+{% endblock %}
