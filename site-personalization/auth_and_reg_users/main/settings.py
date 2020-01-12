@@ -118,3 +118,6 @@ try:
     from .settings_local import *
 except ImportError:
     pass
+
+
+AUTH_USER_MODEL = 'auth.User'
