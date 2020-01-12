@@ -11,13 +11,9 @@ def home(request):
 
 def signup(request):
     form = UserCreationForm()
-    print('Форма:')
     if request.method == 'POST':
-        print(form.is_valid())
-        print(form.data)
         username = request.POST.get('username')
         password = request.POST.get('password1')
-        print ([username, password])
         user = User.objects.create_user(username,"",password)
     return render(request, 'registration/signup.html', context={'form': form})
 
