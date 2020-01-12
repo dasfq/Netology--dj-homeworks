@@ -20,14 +20,15 @@ def product_view(request, pk):
     template = 'app/product_detail.html'
     product = get_object_or_404(Product, id=pk)
     form = ReviewForm
-    if not request.session['reviewed_products']:
+    if not 'reviewed_products' in request.session.keys():
         request.session['reviewed_products'] = []
-    request.session['is_review_exists'] = False
+        request.session['is_review_exists'] = False
 
     if request.method == 'POST':
-        review_text = request.POST.get('text')
-        new_review = Review.objects.create(text=review_text, product=product)
-        request.session['reviewed_products'].append(product.id)
+        if form.is_valid():
+            review_text = form.cleaned_data['text']
+            new_review = Review.objects.create(text=review_text, product=product)
+            request.session['reviewed_products'].append(product.id)
 
     reviews = Review.objects.filter(product=product)
     if product.id in request.session['reviewed_products']:
