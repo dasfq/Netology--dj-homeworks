@@ -42,3 +42,6 @@ def product_view(request, pk):
     }
 
     return render(request, template, context)
+
+
+# ну же... пушься на репозиторий!!!
