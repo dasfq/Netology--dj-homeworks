@@ -10,11 +10,16 @@ def home(request):
 
 
 def signup(request):
-    form = UserCreationForm()
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password1')
-        user = User.objects.create_user(username,"",password)
+        form = UserCreationForm(request.POST)
+        print('1')
+        if form.is_valid():
+            print('2')
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = User.objects.create_user(username,"",password)
+    else:
+        form = UserCreationForm()
     return render(request, 'registration/signup.html', context={'form': form})
 
 def login(request):
