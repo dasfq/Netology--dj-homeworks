@@ -22,7 +22,6 @@ class Article(models.Model):
         return self.title
 
 class ArticleMain(models.Model):
-
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
     scope = models.ForeignKey(Scope, on_delete=models.CASCADE)
     is_main = models.BooleanField(verbose_name='Главный раздел')
