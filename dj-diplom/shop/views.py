@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from .models import Article
+from .models import Article, Category
 
 def index(request):
     template_name = 'index.html'
     articles = Article.objects.order_by('-date_created')
+    print(articles[0])
     context = {
         'articles': articles,
     }

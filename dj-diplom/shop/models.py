@@ -32,7 +32,7 @@ class User(AbstractUser):
 
 
 class Review(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, unique=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     stars = models.PositiveIntegerField(verbose_name='Рейтинг')
     text = models.CharField(max_length=200, null=False, default="", verbose_name='Текст')
     date = models.DateTimeField(default=datetime.now())
@@ -46,7 +46,7 @@ class Item(models.Model):
     name = models.CharField(max_length=max_length)
     image = models.CharField(max_length=max_length)
     description = models.CharField(max_length=max_length)
-    reviews = models.ForeignKey(Review, on_delete=models.CASCADE)
+    reviews = models.ForeignKey(Review, on_delete=models.CASCADE, null=True)
     category = models.ManyToManyField(Category)
 
     class Meta:
