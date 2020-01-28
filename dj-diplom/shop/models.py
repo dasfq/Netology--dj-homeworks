@@ -5,6 +5,7 @@ max_length = 20
 class Article(models.Model):
     title = models.CharField(max_length='256', null=False, default="", verbose_name='Заголовок')
     sub_title = models.CharField(max_length='256', null=False, default="", verbose_name='Подзаголовок')
+    category = models.ManyToManyField(Category)
 
     class Meta:
         verbose_name='Статья'
