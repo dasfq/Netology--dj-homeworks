@@ -15,8 +15,8 @@ class Category(models.Model):
 
 
 class Article(models.Model):
-    title = models.CharField(max_length='256', null=False, default="", verbose_name='Заголовок')
-    sub_title = models.CharField(max_length='256', null=False, default="", verbose_name='Подзаголовок')
+    title = models.CharField(max_length=200, null=False, default="", verbose_name='Заголовок')
+    sub_title = models.CharField(max_length=200, null=False, default="", verbose_name='Подзаголовок')
     category = models.ManyToManyField(Category)
     date_created = models.DateTimeField(verbose_name='Дата создания')
 
@@ -34,7 +34,7 @@ class User(AbstractUser):
 class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, unique=True)
     stars = models.PositiveIntegerField(verbose_name='Рейтинг')
-    text = models.CharField(max_length='256', null=False, default="", verbose_name='Текст')
+    text = models.CharField(max_length=200, null=False, default="", verbose_name='Текст')
     date = models.DateTimeField(default=datetime.now())
 
     class Meta:
@@ -43,9 +43,9 @@ class Review(models.Model):
 
 
 class Item(models.Model):
-    name = models.CharField()
-    image = models.CharField()
-    description = models.CharField()
+    name = models.CharField(max_length=max_length)
+    image = models.CharField(max_length=max_length)
+    description = models.CharField(max_length=max_length)
     reviews = models.ForeignKey(Review, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category)
 
@@ -57,7 +57,7 @@ class Item(models.Model):
         return self.name
 
 
-class Cart:
+class Cart(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, unique=True)
     item = models.ManyToManyField(Item)
     quantity = models.PositiveIntegerField(default=1, verbose_name='Количество')
@@ -65,7 +65,7 @@ class Cart:
     class Meta:
         verbose_name='Корзина'
 
-class Order:
+class Order(models.Model):
     date = models.DateTimeField(default=datetime.now())
     user = models.ForeignKey(User, on_delete=models.CASCADE, unique=True)
     item = models.ManyToManyField(Item)
