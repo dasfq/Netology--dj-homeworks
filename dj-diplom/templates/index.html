@@ -61,11 +61,11 @@
 
 
 <main role="main">
-
+  {% for article in articles %}
   <div class="jumbotron">
     <div class="container">
-      <h1 class="display-4">Добро пожаловать на сайт просто магазина</h1>
-      <p>Лучшие мобилы только у нас:</p>
+      <h1 class="display-4">article.title</h1>
+      <p>article.sub_title</p>
     </div>
   </div>
 
@@ -73,18 +73,19 @@
   <div class="container mb-5">
     <!-- Example row of columns -->
     <div class="row">
-
+      {% for item in article.category.item_set.all %}
       <div class="col-md-4">
-        <h2>items.name</h2>
+        <h2>{{ items.name }}</h2>
 
         <a href="../phone.html">
-          <img src="item.image" width="180">
+          <img src="{{ item.image }}" width="180">
         </a>
 
         <form>
           <input type="submit" class="btn btn-secondary" value="Добавить в корзину »">
         </form>
       </div>
+      {% end for %}
 
     </div>
   </div> <!-- /container -->
@@ -117,7 +118,7 @@
 
     </div>
   </div> <!-- /container -->
-
+  {% end for %}
 </main>
 
 <hr>

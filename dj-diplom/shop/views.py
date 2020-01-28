@@ -1,9 +1,12 @@
 from django.shortcuts import render
+from .models import Article
 
 def index(request):
     template_name = 'index.html'
-    items
-    context = {}
+    articles = Article.objects.order_by('-date_created')
+    context = {
+        'articles': articles,
+    }
     return render(request, template_name, context)
 
 def phone_page(request):
