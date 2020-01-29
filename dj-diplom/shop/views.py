@@ -4,7 +4,8 @@ from .models import Article, Category
 def index(request):
     template_name = 'index.html'
     articles = Article.objects.order_by('-date_created')
-    print(articles[0])
+# не пойму почему print выдаёт None
+    print(articles[0].category.item_set.all())
     context = {
         'articles': articles,
     }

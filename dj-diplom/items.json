@@ -1,0 +1,171 @@
+[
+  {
+    "model": "shop.category",
+    "pk": 1,
+    "fields": {
+      "name": "Товары для дома"
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 2,
+    "fields": {
+      "name": "Смартфоны"
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 3,
+    "fields": {
+      "name": "Одежда"
+    }
+  },
+  {
+    "model": "shop.article",
+    "pk": 5,
+    "fields": {
+      "title": "Где купить новый телефон?",
+      "sub_title": "У нас !",
+      "date_created": "2018-09-30T19:26:52Z",
+      "category": 2
+    }
+  },
+  {
+    "model": "shop.article",
+    "pk": 6,
+    "fields": {
+      "title": "Нечего одеть на вечеринку?",
+      "sub_title": "Выбери модную одежду в нашем каталоге!",
+      "date_created": "2018-06-30T19:26:52Z",
+      "category": 3
+    }
+  },
+  {
+    "model": "shop.article",
+    "pk": 7,
+    "fields": {
+      "title": "Чтобы дом не зарос пылью...",
+      "sub_title": "Купите эти необходимые товары",
+      "date_created": "2018-08-30T19:26:52Z",
+      "category": 1
+    }
+  },
+  {
+    "model": "shop.user",
+    "pk": 2,
+    "fields": {
+      "username": "",
+      "password": "",
+      "email": ""
+    }
+  },
+  {
+    "model": "shop.user",
+    "pk": 1,
+    "fields": {
+      "username": "Всеволод",
+      "password": "1q1q1q1q",
+      "email": ""
+    }
+  },
+  {
+    "model": "shop.item",
+    "pk": 1,
+    "fields": {
+      "name": "Iphone 7",
+      "image": "static/iphone7.webp",
+      "description": "Провереный телефончик, не подводит!",
+      "category": "2"
+    }
+  },
+  {
+    "model": "shop.item",
+    "pk": 2,
+    "fields": {
+      "name": "Nexus 5",
+      "image": "static/nexus5x.webp",
+      "description": "Долгая батарей!",
+      "category": "2"
+    }
+  },
+  {
+    "model": "shop.item",
+    "pk": 3,
+    "fields": {
+      "name": "Pixel 2",
+      "image": "static/pixel2.webp",
+      "description": "Отличная камера!",
+      "category": "2"
+    }
+  },
+  {
+    "model": "shop.item",
+    "pk": 4,
+    "fields": {
+      "name": "Samsung S8",
+      "image": "static/samsungs8.webp",
+      "description": "Наушники в подарок!",
+      "category": "2"
+    }
+  },
+  {
+    "model": "shop.item",
+    "pk": 5,
+    "fields": {
+      "name": "Фуфайка",
+      "image": "static/fufajka.jpg",
+      "description": "Фуфайка как у прапорщика Задова!",
+      "category": "3"
+    }
+  },
+  {
+    "model": "shop.item",
+    "pk": 6,
+    "fields": {
+      "name": "Кепка",
+      "image": "static/kepka.jpg",
+      "description": "Кепка для твоего первого клипа!",
+      "category": "3"
+    }
+  },
+  {
+    "model": "shop.item",
+    "pk": 7,
+    "fields": {
+      "name": "Кросовки",
+      "image": "static/krosovki.jpg",
+      "description": "Лучшие кросы на районе!",
+      "category": "3"
+    }
+  },
+  {
+    "model": "shop.item",
+    "pk": 8,
+    "fields": {
+      "name": "Ортопедическая подушка",
+      "image": "static/podushka.jpg",
+      "description": "Подушка из синтепона.",
+      "category": "1"
+    }
+  },
+  {
+    "model": "shop.item",
+    "pk": 9,
+    "fields": {
+      "name": "Мусорные пакеты",
+      "image": "static/paketi.jpg",
+      "description": "Пакеты 20л. с ручками.",
+      "category": "1"
+    }
+  },
+  {
+    "model": "shop.item",
+    "pk": 10,
+    "fields": {
+      "name": "Ёршик туалетный",
+      "image": "static/yorshik.jpg",
+      "description": "Щетина из австралийского кактуса!",
+      "category": "1"
+    }
+  }
+]
