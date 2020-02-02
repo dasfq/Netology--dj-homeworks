@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import Article, Category, Item
 from django.core.paginator import Paginator
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.forms import UserCreationForm
+
 
 categories = Category.objects.all()
 
@@ -70,4 +72,8 @@ def signup(request):
             user = User.objects.create_user(username,"",password)
     else:
         form = UserCreationForm()
-    return render(request, 'registration/signup.html', context={'form': form})
+    context={
+        'form': form,
+        'categories': categories,
+    }
+    return render(request, 'registration/signup.html', context)

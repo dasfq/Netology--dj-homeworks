@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from shop.views import index, cart, empty_section, login, item_page, category_view, logged_out
+from shop.views import index, cart, empty_section, login, item_page, category_view, logged_out, signup
 
 urlpatterns = [
     path('', index, name='index'),
@@ -24,6 +24,7 @@ urlpatterns = [
     path('empty_section/', empty_section, name='empty_section'),
     path('login/', login.as_view(), name='login'),
     path('logout/', logged_out, name="logged_out"),
+    path('signup/', signup, name="signup"),
     path('category/<int:pk>/', category_view, name='category'),
     path('admin/', admin.site.urls),
 ]
