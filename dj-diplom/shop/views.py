@@ -3,6 +3,8 @@ from .models import Article, Category, Item
 from django.core.paginator import Paginator
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import reverse
+import urllib
 
 
 categories = Category.objects.all()
@@ -42,11 +44,26 @@ def empty_section(request):
 
 def category_view(request, pk):
     template_name = 'category.html'
+    items_per_page = 3
     items = Item.objects.filter(category__id=pk)
+    p = Paginator(items, items_per_page)
+    page_number = 1 if request.GET.get('page') == None else int(request.GET.get('page'))
+    if p.page(page_number).has_next():
+        next_page_url = reverse('category', args=[pk]) + '?' + urllib.parse.urlencode({'page': p.page(page_number).next_page_number()})
+    else:
+        next_page_url = None
+    if p.page(page_number).has_previous():
+        prev_page_url = reverse('category', args=[pk]) + '?' + urllib.parse.urlencode(
+        {'page': p.page(page_number).previous_page_number()})
+    else:
+        prev_page_url = None
     context = {
-        "items": items,
+        "items": p.page(page_number),
         "category": Category.objects.get(id=pk).name,
         "categories": categories,
+        'current_page': page_number,
+        'prev_page_url': prev_page_url,
+        'next_page_url': next_page_url,
     }
     return render(request, template_name, context)
 
