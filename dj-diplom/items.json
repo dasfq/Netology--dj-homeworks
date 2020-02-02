@@ -56,7 +56,7 @@
     "fields": {
       "username": "Джамбек",
       "password": "",
-      "email": ""
+      "email": "one@mail.ru"
     }
   },
   {
@@ -65,7 +65,7 @@
     "fields": {
       "username": "Олесь",
       "password": "1q1q1q1q",
-      "email": ""
+      "email": "two@mail.ru"
     }
   },
   {
@@ -74,7 +74,7 @@
     "fields": {
       "username": "Ольга Петровна",
       "password": "1q1q1q1q",
-      "email": ""
+      "email": "three@mail.ru"
     }
   },
   {
@@ -83,7 +83,7 @@
     "fields": {
       "username": "Zoomer2020",
       "password": "1q1q1q1q",
-      "email": ""
+      "email": "four@mail.ru"
     }
   },
   {
@@ -285,7 +285,7 @@
     "fields": {
       "user": 2,
       "stars": 5,
-      "text": "Реккомендую!!!",
+      "text": "Рекомендую!!!",
       "date": "2019-08-30T19:26:52Z",
       "item": 2
     }

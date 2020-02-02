@@ -1,4 +1,5 @@
-{% extend "base.html" %}
+{% extends "base.html" %}
+{% load filters %}
 
 {% block title %} Item information {% endblock %}
 
@@ -12,11 +13,11 @@
     <!-- Example row of columns -->
     <div class="row">
       <div class="col-md-12">
-        <h2>Nexus 5x</h2>
+        <h2>{{ item.name }}</h2>
 
-        <img src="../static/nexus5x.webp" width="120">
+        <img src="{{ STATIC_URL }}/{{ item.image }}" width="120">
 
-        <p>Неплохой телефон</p>
+        <p>{{ item.description }}</p>
         <form method="post" action="../cart/">
           <input type="hidden" name="csrfmiddlewaretoken"
                  value="N4vcBqzjoYkU7OTDuAT8hq8srpvYX44nJsswuP7e3EYg0Hq8DgxuR0eiXWbSr5RZ">
@@ -25,13 +26,14 @@
         </form>
       </div>
     </div>
+
+    {% for review in item.review_set.all %}
     <hr>
 
-    ★★★★★ <span>Вася</span>
-    <p> Хороший отзыв</p>
+    {{ review.stars|rate_stars }} <span>{{ review.user }}</span>
+    <p>{{ review.text }}</p>
 
-    ★★ <span>Петя</span>
-    <p> Плохой отзыв</p>
+    {% endfor %}
 
     <hr>
 
@@ -97,4 +99,6 @@
 
 
 </main>
+
+{% endblock %}
 
