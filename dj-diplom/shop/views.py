@@ -1,20 +1,24 @@
 from django.shortcuts import render
-from .models import Article, Category
+from .models import Article, Category, Item
+from django.core.paginator import Paginator
 
 def index(request):
     template_name = 'index.html'
     articles = Article.objects.order_by('-date_created')
-# не пойму почему print выдаёт None
-    print(articles[0].category.item_set.all())
+
     context = {
         'articles': articles,
     }
     return render(request, template_name, context)
 
-def phone_page(request):
-    template_name = 'phone_page.html'
+def item_page(request):
+    template_name = 'item.html'
     context = {}
     return render(request, template_name, context)
+
+def add_cart(request):
+    if request.method == 'POST':
+        pass
 
 def cart(request):
     template_name = 'cart.html'
@@ -31,7 +35,11 @@ def login(request):
     context = {}
     return render(request, template_name, context)
 
-def smartphones(request):
-    template_name = 'smartphones.html'
-    context = {}
+def category_view(request, pk):
+    template_name = 'category.html'
+    items = Item.objects.filter(category__id=pk)
+    context = {
+        "items": items,
+        "category": Category.objects.get(id=pk).name
+    }
     return render(request, template_name, context)

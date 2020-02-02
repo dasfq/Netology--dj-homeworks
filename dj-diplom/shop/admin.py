@@ -20,6 +20,9 @@ class CartAdmin(admin.ModelAdmin):
 class OrderAdmin(admin.ModelAdmin):
     pass
 
+class UserAdmin(admin.ModelAdmin):
+    pass
+
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Article, ArticleAdmin)
@@ -27,4 +30,4 @@ admin.site.register(Review, ReviewAdmin)
 admin.site.register(Item, ItemAdmin)
 admin.site.register(Cart, CartAdmin)
 admin.site.register(Order, OrderAdmin)
-
+admin.site.register(User, UserAdmin)

@@ -22,7 +22,7 @@
   },
   {
     "model": "shop.article",
-    "pk": 5,
+    "pk": 1,
     "fields": {
       "title": "Где купить новый телефон?",
       "sub_title": "У нас !",
@@ -32,7 +32,7 @@
   },
   {
     "model": "shop.article",
-    "pk": 6,
+    "pk": 2,
     "fields": {
       "title": "Нечего одеть на вечеринку?",
       "sub_title": "Выбери модную одежду в нашем каталоге!",
@@ -42,7 +42,7 @@
   },
   {
     "model": "shop.article",
-    "pk": 7,
+    "pk": 3,
     "fields": {
       "title": "Чтобы дом не зарос пылью...",
       "sub_title": "Купите эти необходимые товары",
@@ -52,18 +52,36 @@
   },
   {
     "model": "shop.user",
-    "pk": 2,
+    "pk": 5,
     "fields": {
-      "username": "",
+      "username": "Джамбек",
       "password": "",
       "email": ""
     }
   },
   {
     "model": "shop.user",
-    "pk": 1,
+    "pk": 2,
     "fields": {
-      "username": "Всеволод",
+      "username": "Олесь",
+      "password": "1q1q1q1q",
+      "email": ""
+    }
+  },
+  {
+    "model": "shop.user",
+    "pk": 3,
+    "fields": {
+      "username": "Ольга Петровна",
+      "password": "1q1q1q1q",
+      "email": ""
+    }
+  },
+  {
+    "model": "shop.user",
+    "pk": 4,
+    "fields": {
+      "username": "Zoomer2020",
       "password": "1q1q1q1q",
       "email": ""
     }
@@ -166,6 +184,154 @@
       "image": "static/yorshik.jpg",
       "description": "Щетина из австралийского кактуса!",
       "category": "1"
+    }
+  },
+  {
+    "model": "shop.item",
+    "pk": 11,
+    "fields": {
+      "name": "Xiaomi Redmi 8",
+      "image": "static/redmi8.jpg",
+      "description": "Два дня без подзарядки!",
+      "category": "2"
+    }
+  },
+  {
+    "model": "shop.item",
+    "pk": 12,
+    "fields": {
+      "name": "Honor 9",
+      "image": "static/honor9.jpg",
+      "description": "Встроенный пульт от телевизора!",
+      "category": "2"
+    }
+  },
+  {
+    "model": "shop.item",
+    "pk": 13,
+    "fields": {
+      "name": "Iphone 11",
+      "image": "static/iphone11.jpg",
+      "description": "Самый модный телефон!",
+      "category": "2"
+    }
+  },
+  {
+    "model": "shop.item",
+    "pk": 14,
+    "fields": {
+      "name": "Nokia 3310",
+      "image": "static/nokia3310.png",
+      "description": "Самый прочный телефон!",
+      "category": "2"
+    }
+  },
+  {
+    "model": "shop.item",
+    "pk": 15,
+    "fields": {
+      "name": "Siemens C55",
+      "image": "static/siemensc55.jpg",
+      "description": "Поставь любой звук в качестве мелодии!",
+      "category": "2"
+    }
+  },
+  {
+    "model": "shop.item",
+    "pk": 16,
+    "fields": {
+      "name": "Iphone 7 recovery",
+      "image": "static/iphone7.webp",
+      "description": "Такой же, только дешевле!",
+      "category": "2"
+    }
+  },
+  {
+    "model": "shop.review",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "stars": 4,
+      "text": "Пойдёт...",
+      "date": "2018-08-30T19:26:52Z",
+      "item": 1
+    }
+  },
+  {
+    "model": "shop.review",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "stars": 3,
+      "text": "Лучший в мире!",
+      "date": "2018-07-30T19:26:52Z",
+      "item": 2
+    }
+  },
+  {
+    "model": "shop.review",
+    "pk": 3,
+    "fields": {
+      "user": 2,
+      "stars": 4,
+      "text": "Отличный девайс! И хороший интернет-магазин!",
+      "date": "2018-05-30T19:26:52Z",
+      "item": 1
+    }
+  },
+  {
+    "model": "shop.review",
+    "pk": 4,
+    "fields": {
+      "user": 2,
+      "stars": 5,
+      "text": "Реккомендую!!!",
+      "date": "2019-08-30T19:26:52Z",
+      "item": 2
+    }
+  },
+  {
+    "model": "shop.review",
+    "pk": 5,
+    "fields": {
+      "user": 1,
+      "stars": 2,
+      "text": "Можно бы и подешевле... А так, норм",
+      "date": "2020-08-30T19:26:52Z",
+      "item": 3
+    }
+  },
+  {
+    "model": "shop.review",
+    "pk": 6,
+    "fields": {
+      "user": 2,
+      "stars": 1,
+      "text": "Купил, ещё не проверял в деле. ПОтом дополню как проверю.",
+      "date": "2019-11-30T19:26:52Z",
+      "item": 3
+    }
+  },
+  {
+    "model": "shop.review",
+    "pk": 7,
+    "fields": {
+      "user": 3,
+      "stars": 5,
+      "text": "Пойдёт...",
+      "date": "2018-08-30T19:26:52Z",
+      "item": 3
+    }
+  },
+  {
+    "model": "shop.review",
+    "pk": 8,
+    "fields": {
+      "user": 4,
+      "stars": 5,
+      "text": "Закахал второй жене",
+      "date": "2018-08-20T19:26:52Z",
+      "item": 3
     }
   }
 ]
