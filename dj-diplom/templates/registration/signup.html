@@ -11,8 +11,8 @@
     <div>
         <form action='{% url "signup" %}' method="POST">
             {% csrf_token %}
-            <label for="username">Логин:</label>
-            {{ form.username }}</br>
+            <label for="username">Email:</label>
+            {{ form.email }}</br>
             <label for="password">Пароль:</label>
             {{ form.password1 }}</br>
             <label for="password_confirm">Повторите пароль:</label>

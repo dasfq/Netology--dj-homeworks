@@ -1,6 +1,7 @@
 from django.db import models
-from datetime import datetime
 from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import PermissionsMixin
+from .managers import CustomUserManager
 max_length = 20
 
 
@@ -29,8 +30,18 @@ class Article(models.Model):
         return self.title
 
 
-class User(AbstractUser):
-    pass
+class CustomUser(AbstractUser, PermissionsMixin):
+    username = models.CharField(default="", max_length=max_length)
+    email = models.EmailField(verbose_name="email address", unique=True)
+    is_superuser = models.BooleanField(default=False)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
+    objects = CustomUserManager()
+
+    def __str__(self):
+        return self.email
 
 
 class Item(models.Model):
@@ -49,7 +60,7 @@ class Item(models.Model):
 
 
 class Review(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Пользователь')
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, verbose_name='Пользователь')
     stars = models.PositiveIntegerField(verbose_name='Рейтинг')
     text = models.CharField(max_length=200, null=False, default="", verbose_name='Текст')
     date = models.DateTimeField(auto_now_add=False, verbose_name='Дата отзыва')
@@ -61,7 +72,7 @@ class Review(models.Model):
 
 
 class Cart(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, unique=True, verbose_name="Пользователь")
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, unique=True, verbose_name="Пользователь")
     item = models.ManyToManyField(Item, through="CartInfo", verbose_name='Товар')
 
     class Meta:
@@ -80,7 +91,7 @@ class CartInfo(models.Model):
 
 class Order(models.Model):
     date = models.DateTimeField(auto_now_add=False)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, unique=True)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, unique=True)
     item = models.ManyToManyField(Item, through='OrderInfo')
 
 

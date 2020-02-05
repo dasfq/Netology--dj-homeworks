@@ -51,7 +51,7 @@
     }
   },
   {
-    "model": "shop.user",
+    "model": "shop.customuser",
     "pk": 5,
     "fields": {
       "username": "Джамбек",
@@ -60,41 +60,48 @@
     }
   },
   {
-    "model": "shop.user",
+    "model": "shop.customuser",
     "pk": 2,
     "fields": {
       "username": "Олесь",
-      "password": "1q1q1q1q",
+      "password": "",
       "email": "two@mail.ru"
     }
   },
   {
-    "model": "shop.user",
+    "model": "shop.customuser",
     "pk": 3,
     "fields": {
       "username": "Ольга Петровна",
-      "password": "1q1q1q1q",
+      "password": "",
       "email": "three@mail.ru"
     }
   },
   {
-    "model": "shop.user",
+    "model": "shop.customuser",
     "pk": 4,
     "fields": {
       "username": "Zoomer2020",
-      "password": "1q1q1q1q",
+      "password": "",
       "email": "four@mail.ru"
     }
   },
   {
-    "model": "shop.user",
-    "pk": 1,
-    "fields": {
-      "username": "admin",
-      "password": "admin",
-      "email": "admin@mail.ru",
-      "is_staff": "True",
-      "is_superuser": "True"
+     "model": "shop.customuser",
+     "pk": 10,
+     "fields": {
+          "password": "pbkdf2_sha256$100000$TnsSH8Jl7HEF$intL+csIhgVdh/WtNtOr6n4vcN78isQZYISvVrjvTaY=",
+          "last_login": "2020-02-05T19:40:18Z",
+          "first_name": "",
+          "last_name": "",
+          "is_staff": true,
+          "is_active": true,
+          "date_joined": "2020-02-05T19:40:05Z",
+          "username": "admin",
+          "email": "admin@mail.com",
+          "is_superuser": true,
+          "groups": [],
+          "user_permissions": []
     }
   },
   {

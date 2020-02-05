@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .models import Article, Category, Item
+from .models import Article, Category, Item, CustomUser
 from django.core.paginator import Paginator
 from django.contrib.auth import views as auth_views
-from django.contrib.auth.forms import UserCreationForm
+from .forms import UserForm
 from django.shortcuts import reverse
 import urllib
 from django.contrib.auth import get_user_model
@@ -64,33 +64,28 @@ def category_view(request, pk):
     return render(request, template_name, context)
 
 
-# def login(request):
-#     auth_views.login(request)
-#     return render(request, 'registration/login.html', context)
-#
-# def logged_out(request):
-#     auth_views.logout(request)
-#     return render(request, 'registration/logged_out.html', context)
-
 def signup(request):
+    test()
     User = get_user_model()
     if request.method == 'POST':
         print(User)
-        form = UserCreationForm(request.POST)
+        form = UserForm(request.POST)
         form.Meta.model = User
         print(form.Meta.model)
         if form.is_valid():
-            print('1')
-            username = form.cleaned_data.get('username')
             print('2')
             password = form.cleaned_data.get('password1')
             email = form.cleaned_data.get('email')
             print('3')
-            user = User.objects.create_user(username,"",password)
+            user = User.objects.create_user(email,password)
     else:
-
-        form = UserCreationForm()
+        form = UserForm()
     context={
         'form': form,
     }
     return render(request, 'registration/signup.html', context)
+
+
+def test():
+    users = CustomUser.objects.all()
+    print(users[1])

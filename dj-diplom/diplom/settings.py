@@ -125,7 +125,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-AUTH_USER_MODEL = 'shop.User'
+AUTH_USER_MODEL = 'shop.CustomUser'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -134,4 +134,12 @@ LOGIN_REDIRECT_URL = "index"
 
 CART_SESSION_ID = 'cart'
 
-
+# ACCOUNT_AUTHENTICATION_METHOD = 'email'
+# ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_UNIQUE_EMAIL = True
+# ACCOUNT_USERNAME_REQUIRED = False
+#
+# ACCOUNT_USER_USERNAME_FIELD = None
+# ACCOUNT_USER_EMAIL_FIELD = "email"
+#
+# ACCOUNT_USER_MODEL_USERNAME_FIELD = None
