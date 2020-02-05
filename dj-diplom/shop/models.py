@@ -62,7 +62,7 @@ class Item(models.Model):
 class Review(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, verbose_name='Пользователь')
     stars = models.PositiveIntegerField(verbose_name='Рейтинг')
-    text = models.CharField(max_length=200, null=False, default="", verbose_name='Текст')
+    text = models.CharField(max_length=200, null=True, verbose_name='Текст')
     date = models.DateTimeField(auto_now_add=False, verbose_name='Дата отзыва')
     item = models.ForeignKey(Item, on_delete=models.CASCADE, null=True, verbose_name="Отзывы")
 

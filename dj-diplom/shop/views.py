@@ -1,11 +1,13 @@
 from django.shortcuts import render
-from .models import Article, Category, Item, CustomUser
+from .models import Article, Category, Item, CustomUser, Review
 from django.core.paginator import Paginator
 from django.contrib.auth import views as auth_views
-from .forms import UserForm
+from .forms import UserForm, ReviewForm
 from django.shortcuts import reverse
 import urllib
 from django.contrib.auth import get_user_model
+from datetime import datetime
+
 
 
 def index(request):
@@ -20,8 +22,19 @@ def index(request):
 def item_page(request, pk):
     template_name = 'item.html'
     item = Item.objects.get(id=pk)
+    if request.method == "POST":
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            stars = form.cleaned_data.get('stars')
+            text = form.cleaned_data.get('text')
+            user = request.user
+            date = datetime.now()
+            Review.objects.create(stars=stars, text=text, user=user, item=item, date=date)
+    else:
+        form = ReviewForm()
     context = {
         "item": item,
+        "form": form,
     }
     return render(request, template_name, context)
 
@@ -68,15 +81,11 @@ def signup(request):
     test()
     User = get_user_model()
     if request.method == 'POST':
-        print(User)
         form = UserForm(request.POST)
         form.Meta.model = User
-        print(form.Meta.model)
         if form.is_valid():
-            print('2')
             password = form.cleaned_data.get('password1')
             email = form.cleaned_data.get('email')
-            print('3')
             user = User.objects.create_user(email,password)
     else:
         form = UserForm()
@@ -85,7 +94,3 @@ def signup(request):
     }
     return render(request, 'registration/signup.html', context)
 
-
-def test():
-    users = CustomUser.objects.all()
-    print(users[1])

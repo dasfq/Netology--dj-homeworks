@@ -41,9 +41,8 @@
       <div class="col-lg-6 col-md-8 col-sm-12">
         <h4>Оставте отзыв:</h4>
 
-        <form action="../merch/1/feedback" method="post">
-          <input type="hidden" name="csrfmiddlewaretoken"
-                 value="N4vcBqzjoYkU7OTDuAT8hq8srpvYX44nJsswuP7e3EYg0Hq8DgxuR0eiXWbSr5RZ">
+        <form action="{% url 'item_page' item.id %}" method="post">
+          {% csrf_token %}
           <div class="form-group">
             <label for="name">Имя</label>
             <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
@@ -53,42 +52,11 @@
             <label for="content">Содержание</label>
             <textarea class="form-control" id="content" placeholder="Содержание"
                       name="description"></textarea>
+          {{ form }}
+
           </div>
 
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="mark" id="mark1" value="1">
-            <label class="form-check-label" for="mark1">
-              1
-            </label>
-          </div>
 
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="mark" id="mark2" value="2">
-            <label class="form-check-label" for="mark2">
-              2
-            </label>
-          </div>
-
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="mark" id="mark3" value="3">
-            <label class="form-check-label" for="mark3">
-              3
-            </label>
-          </div>
-
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="mark" id="mark4" value="4">
-            <label class="form-check-label" for="mark4">
-              4
-            </label>
-          </div>
-
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="mark" id="mark5" value="5">
-            <label class="form-check-label" for="mark5">
-              5
-            </label>
-          </div>
 
           <button type="submit" class="btn btn-primary">Оставить</button>
         </form>
@@ -96,7 +64,6 @@
     </div>
 
   </div> <!-- /container -->
-
 
 </main>
 
