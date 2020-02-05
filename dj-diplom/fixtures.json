@@ -87,6 +87,17 @@
     }
   },
   {
+    "model": "shop.user",
+    "pk": 1,
+    "fields": {
+      "username": "admin",
+      "password": "admin",
+      "email": "admin@mail.ru",
+      "is_staff": "True",
+      "is_superuser": "True"
+    }
+  },
+  {
     "model": "shop.item",
     "pk": 1,
     "fields": {
@@ -103,7 +114,8 @@
       "name": "Nexus 5",
       "image": "static/nexus5x.webp",
       "description": "Долгая батарей!",
-      "category": "2"
+      "category": "2",
+      "price": "20000"
     }
   },
   {
@@ -113,7 +125,8 @@
       "name": "Pixel 2",
       "image": "static/pixel2.webp",
       "description": "Отличная камера!",
-      "category": "2"
+      "category": "2",
+      "price": "12000"
     }
   },
   {
@@ -123,7 +136,8 @@
       "name": "Samsung S8",
       "image": "static/samsungs8.webp",
       "description": "Наушники в подарок!",
-      "category": "2"
+      "category": "2",
+      "price": "120000"
     }
   },
   {
@@ -133,7 +147,8 @@
       "name": "Фуфайка",
       "image": "static/fufajka.jpg",
       "description": "Фуфайка как у прапорщика Задова!",
-      "category": "3"
+      "category": "3",
+      "price": "3000"
     }
   },
   {
@@ -143,7 +158,8 @@
       "name": "Кепка",
       "image": "static/kepka.jpg",
       "description": "Кепка для твоего первого клипа!",
-      "category": "3"
+      "category": "3",
+      "price": "200"
     }
   },
   {
@@ -153,7 +169,8 @@
       "name": "Кросовки",
       "image": "static/krosovki.jpg",
       "description": "Лучшие кросы на районе!",
-      "category": "3"
+      "category": "3",
+      "price": "2000"
     }
   },
   {
@@ -163,7 +180,8 @@
       "name": "Ортопедическая подушка",
       "image": "static/podushka.jpg",
       "description": "Подушка из синтепона.",
-      "category": "1"
+      "category": "1",
+      "price": "5000"
     }
   },
   {
@@ -173,7 +191,8 @@
       "name": "Мусорные пакеты",
       "image": "static/paketi.jpg",
       "description": "Пакеты 20л. с ручками.",
-      "category": "1"
+      "category": "1",
+      "price": "150"
     }
   },
   {
@@ -183,7 +202,8 @@
       "name": "Ёршик туалетный",
       "image": "static/yorshik.jpg",
       "description": "Щетина из австралийского кактуса!",
-      "category": "1"
+      "category": "1",
+      "price": "200"
     }
   },
   {
@@ -193,7 +213,8 @@
       "name": "Xiaomi Redmi 8",
       "image": "static/redmi8.jpg",
       "description": "Два дня без подзарядки!",
-      "category": "2"
+      "category": "2",
+      "price": "10000"
     }
   },
   {
@@ -203,7 +224,8 @@
       "name": "Honor 9",
       "image": "static/honor9.jpg",
       "description": "Встроенный пульт от телевизора!",
-      "category": "2"
+      "category": "2",
+      "price": "15000"
     }
   },
   {
@@ -213,7 +235,8 @@
       "name": "Iphone 11",
       "image": "static/iphone11.jpg",
       "description": "Самый модный телефон!",
-      "category": "2"
+      "category": "2",
+      "price": "120000"
     }
   },
   {
@@ -223,7 +246,8 @@
       "name": "Nokia 3310",
       "image": "static/nokia3310.png",
       "description": "Самый прочный телефон!",
-      "category": "2"
+      "category": "2",
+      "price": "20000"
     }
   },
   {
@@ -233,7 +257,8 @@
       "name": "Siemens C55",
       "image": "static/siemensc55.jpg",
       "description": "Поставь любой звук в качестве мелодии!",
-      "category": "2"
+      "category": "2",
+      "price": "2000"
     }
   },
   {
@@ -243,7 +268,8 @@
       "name": "Iphone 7 recovery",
       "image": "static/iphone7.webp",
       "description": "Такой же, только дешевле!",
-      "category": "2"
+      "category": "2",
+      "price": "36000"
     }
   },
   {

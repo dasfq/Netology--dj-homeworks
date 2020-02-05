@@ -5,9 +5,8 @@ from django.contrib.auth import views as auth_views
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import reverse
 import urllib
+from django.contrib.auth import get_user_model
 
-
-categories = Category.objects.all()
 
 def index(request):
     template_name = 'index.html'
@@ -15,7 +14,6 @@ def index(request):
 
     context = {
         'articles': articles,
-        "categories": categories,
     }
     return render(request, template_name, context)
 
@@ -24,7 +22,6 @@ def item_page(request, pk):
     item = Item.objects.get(id=pk)
     context = {
         "item": item,
-        "categories": categories,
     }
     return render(request, template_name, context)
 
@@ -60,7 +57,6 @@ def category_view(request, pk):
     context = {
         "items": p.page(page_number),
         "category": Category.objects.get(id=pk).name,
-        "categories": categories,
         'current_page': page_number,
         'prev_page_url': prev_page_url,
         'next_page_url': next_page_url,
@@ -68,29 +64,33 @@ def category_view(request, pk):
     return render(request, template_name, context)
 
 
-class login(auth_views.LoginView):
-    extra_context = {
-        "categories": categories,
-    }
-
-def logged_out(request):
-    auth_views.logout(request)
-    context = {
-        "categories": categories,
-    }
-    return render(request, 'registration/logged_out.html', context)
+# def login(request):
+#     auth_views.login(request)
+#     return render(request, 'registration/login.html', context)
+#
+# def logged_out(request):
+#     auth_views.logout(request)
+#     return render(request, 'registration/logged_out.html', context)
 
 def signup(request):
+    User = get_user_model()
     if request.method == 'POST':
+        print(User)
         form = UserCreationForm(request.POST)
+        form.Meta.model = User
+        print(form.Meta.model)
         if form.is_valid():
+            print('1')
             username = form.cleaned_data.get('username')
+            print('2')
             password = form.cleaned_data.get('password1')
+            email = form.cleaned_data.get('email')
+            print('3')
             user = User.objects.create_user(username,"",password)
     else:
+
         form = UserCreationForm()
     context={
         'form': form,
-        'categories': categories,
     }
     return render(request, 'registration/signup.html', context)

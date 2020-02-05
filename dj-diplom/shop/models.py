@@ -38,6 +38,7 @@ class Item(models.Model):
     image = models.ImageField(max_length=max_length, verbose_name='Картинка')
     description = models.CharField(max_length=max_length, verbose_name='Описание')
     category = models.ManyToManyField(Category, verbose_name='Категория товаров')
+    price = models.PositiveIntegerField(default=0, verbose_name="Цена")
 
     class Meta:
         verbose_name='Товар'
