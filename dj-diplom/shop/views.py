@@ -57,6 +57,8 @@ def category_view(request, pk):
     template_name = 'category.html'
     items_per_page = 3
     items = Item.objects.filter(category__id=pk)
+    if len(items) == 0:
+        return redirect('empty_section')
     p = Paginator(items, items_per_page)
     page_number = 1 if request.GET.get('page') == None else int(request.GET.get('page'))
     if p.page(page_number).has_next():

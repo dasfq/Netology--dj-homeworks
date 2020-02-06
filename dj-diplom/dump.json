@@ -112,14 +112,6 @@
      }
 },
 {
-     "model": "sessions.session",
-     "pk": "3lwvw3ga8n360dkt6r2vhajou75xr4i5",
-     "fields": {
-          "session_data": "OWYwOWExMzQ4YWY5Mzg4NjEwMTgyYmE0ZjgzYmUwNjMxN2M2MTdmODp7Il9hdXRoX3VzZXJfaWQiOiI5IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmZTMzNWFhMzlkNjFiYzc2YjRmNzVlN2Q3N2I5ODljMzlkNWE2ZDMxIn0=",
-          "expire_date": "2020-02-19T19:44:25.227Z"
-     }
-},
-{
      "model": "shop.category",
      "pk": 1,
      "fields": {
@@ -814,7 +806,7 @@
      "model": "shop.customuser",
      "pk": 5,
      "fields": {
-          "password": "1q1q1q1q",
+          "password": "",
           "last_login": null,
           "first_name": "",
           "last_name": "",
@@ -859,7 +851,6 @@
           "date_joined": "2020-02-05T19:38:42.796Z",
           "username": "",
           "email": "qwe@qwe.qwe",
-          "is_superuser": true,
           "is_superuser": true,
           "groups": [],
           "user_permissions": []
@@ -936,6 +927,83 @@
           "text": "\u0417\u0430\u043a\u0430\u0445\u0430\u043b \u0432\u0442\u043e\u0440\u043e\u0439 \u0436\u0435\u043d\u0435",
           "date": "2018-08-20T19:26:52Z",
           "item": 3
+     }
+},
+{
+     "model": "shop.review",
+     "pk": 9,
+     "fields": {
+          "user": 9,
+          "stars": 1,
+          "text": null,
+          "date": "2020-02-06T03:02:08.138Z",
+          "item": 1
+     }
+},
+{
+     "model": "shop.review",
+     "pk": 10,
+     "fields": {
+          "user": 9,
+          "stars": 5,
+          "text": null,
+          "date": "2020-02-06T03:02:28.305Z",
+          "item": 1
+     }
+},
+{
+     "model": "shop.review",
+     "pk": 11,
+     "fields": {
+          "user": 9,
+          "stars": 4,
+          "text": "Test review",
+          "date": "2020-02-06T03:04:54.568Z",
+          "item": 5
+     }
+},
+{
+     "model": "shop.review",
+     "pk": 12,
+     "fields": {
+          "user": 9,
+          "stars": 1,
+          "text": "Test",
+          "date": "2020-02-06T22:59:08.490Z",
+          "item": 2
+     }
+},
+{
+     "model": "shop.review",
+     "pk": 13,
+     "fields": {
+          "user": 9,
+          "stars": 1,
+          "text": "Test",
+          "date": "2020-02-06T23:58:51.759Z",
+          "item": 2
+     }
+},
+{
+     "model": "shop.review",
+     "pk": 14,
+     "fields": {
+          "user": 9,
+          "stars": 1,
+          "text": "Test12",
+          "date": "2020-02-07T00:02:26.933Z",
+          "item": 2
+     }
+},
+{
+     "model": "shop.review",
+     "pk": 15,
+     "fields": {
+          "user": 9,
+          "stars": 1,
+          "text": "Test12",
+          "date": "2020-02-07T00:03:54.042Z",
+          "item": 2
      }
 },
 {

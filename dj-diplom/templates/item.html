@@ -41,6 +41,8 @@
       <div class="col-lg-6 col-md-8 col-sm-12">
         <h4>Оставьте отзыв:</h4>
 
+        {% if user.is_authenticated %}
+
         <form action="{% url 'item_page' item.id %}" method="post">
           {% csrf_token %}
 
@@ -53,6 +55,9 @@
           </div>
           <button type="submit" class="btn btn-primary">Оставить</button>
         </form>
+        {% else %}
+        Please log in
+        {% endif %}
       </div>
     </div>
 
