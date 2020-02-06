@@ -17,7 +17,11 @@ class UserForm(UserCreationForm):
 
 class ReviewForm(forms.ModelForm):
     stars = forms.IntegerField(widget=forms.RadioSelect(choices=STAR_CHOICE))
+    text = forms.CharField(label='Содержание:', widget = forms.Textarea(attrs={'class': 'form-control', 'plaсeholder': "Содержание комментария"}))
 
     class Meta:
         model = Review
         fields = ('stars', 'text')
+        # widgets = {
+        #     'text': forms.Textarea(attrs={'class': 'form-control', 'plaсeholder': "Содержание комментария"}),
+        # }

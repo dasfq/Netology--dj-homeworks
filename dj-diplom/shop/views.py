@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Article, Category, Item, CustomUser, Review
 from django.core.paginator import Paginator
 from django.contrib.auth import views as auth_views
@@ -30,6 +30,7 @@ def item_page(request, pk):
             user = request.user
             date = datetime.now()
             Review.objects.create(stars=stars, text=text, user=user, item=item, date=date)
+            return redirect("item_page", item.id)
     else:
         form = ReviewForm()
     context = {
