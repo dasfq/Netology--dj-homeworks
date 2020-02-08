@@ -23,7 +23,8 @@
         {% endfor %}
       </ul>
 
-      <form class="card p-2">
+      <form method="POST" action="{% url 'make_order' %}?next={{ request.path }}" class="card p-2">
+        {% csrf_token %}
         <button type="submit" class="btn btn-secondary">Заказать</button>
       </form>
     </div>

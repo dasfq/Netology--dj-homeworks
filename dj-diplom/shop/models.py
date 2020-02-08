@@ -82,6 +82,12 @@ class Cart(models.Model):
     def __str__(self):
         return str(self.user)
 
+    def make_order(self):
+        # user = self.cart.user
+        # order = Order.objects.create(user=user)
+
+        print('yo12312312')
+
 
 class CartInfo(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE, verbose_name='Товар')
@@ -97,8 +103,8 @@ class CartInfo(models.Model):
 
 
 class Order(models.Model):
-    date = models.DateTimeField(auto_now_add=False)
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    date = models.DateTimeField(auto_now_add=False, null=True)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     item = models.ManyToManyField(Item, through='OrderInfo')
 
 
@@ -106,4 +112,3 @@ class OrderInfo(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
-    is_finished = models.BooleanField

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
-from .models import Article, Category, Item, CustomUser, Review, Cart, CartInfo
+from .models import Article, Category, Item, CustomUser, Review, Cart, CartInfo, OrderInfo, Order
 from django.core.paginator import Paginator
 from django.contrib.auth import views as auth_views
 from .forms import UserForm, ReviewForm
@@ -59,15 +59,24 @@ def add_to_cart(request, pk):
 def cart(request):
     template_name = 'cart.html'
     user = request.user
-    cart = Cart.objects.get(user=user)
+    cart, is_created = Cart.objects.get_or_create(user=user)
     cart_info = CartInfo.objects.filter(cart=cart)
     total_qty = sum([x.quantity for x in cart_info])
     context = {
         'cart': cart_info,
-        'total': total_qty
+        'total': total_qty,
     }
     return render(request, template_name, context)
 
+def make_order(request):
+    user = request.user
+    cart = Cart.objects.get(user=user)
+    items_list = cart.cartinfo_set.all()
+    order = Order.objects.create(user=user)
+    for item in items_list:
+        order_info = OrderInfo.objects.create(order=order, item=item.item, quantity = item.quantity)
+    cart.delete()
+    return redirect('index')
 
 def empty_section(request):
     template_name = 'empty_section.html'
@@ -102,7 +111,6 @@ def category_view(request, pk):
 
 
 def signup(request):
-    test()
     User = get_user_model()
     if request.method == 'POST':
         form = UserForm(request.POST)
@@ -110,7 +118,7 @@ def signup(request):
         if form.is_valid():
             password = form.cleaned_data.get('password1')
             email = form.cleaned_data.get('email')
-            user = User.objects.create_user(email,password)
+            User.objects.create_user(email,password)
     else:
         form = UserForm()
     context={

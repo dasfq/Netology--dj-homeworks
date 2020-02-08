@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Article, CustomUser, Review, Item, Cart, Order, CartInfo
+from .models import Category, Article, CustomUser, Review, Item, Cart, Order, CartInfo, OrderInfo
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -24,6 +24,10 @@ class CartInfoAdmin(admin.ModelAdmin):
 class OrderAdmin(admin.ModelAdmin):
     pass
 
+class OrderInfoAdmin(admin.ModelAdmin):
+    pass
+
+
 class CustomUserAdmin(admin.ModelAdmin):
     pass
 
@@ -35,3 +39,4 @@ admin.site.register(Cart, CartAdmin)
 admin.site.register(CartInfo, CartInfoAdmin)
 admin.site.register(Order, OrderAdmin)
 admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(OrderInfo, OrderInfoAdmin)
