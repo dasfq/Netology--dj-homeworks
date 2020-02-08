@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "shop/base.html" %}
 {% load filters %}
 
 {% block title %}
@@ -27,10 +27,7 @@
         <a href="{% url "item_page" item.id %}">
           <img src="{{ STATIC_URL }}/{{ item.image }}" width="180">
         </a>
-
-        <form method="post" id="{{ item.id }}" action="">
-          <input type="submit" class="btn btn-secondary" value="Добавить в корзину »">
-        </form>
+        {% include 'shop/add_to_cart_btn.html' %}
       </div>
       {% endfor %}
 

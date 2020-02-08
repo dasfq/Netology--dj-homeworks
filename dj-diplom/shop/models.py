@@ -72,26 +72,33 @@ class Review(models.Model):
 
 
 class Cart(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, unique=True, verbose_name="Пользователь")
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE,  verbose_name="Пользователь")
     item = models.ManyToManyField(Item, through="CartInfo", verbose_name='Товар')
 
     class Meta:
         verbose_name='Корзина'
         verbose_name_plural='Корзины'
 
+    def __str__(self):
+        return str(self.user)
+
 
 class CartInfo(models.Model):
-    item = models.ForeignKey(Item, on_delete=models.CASCADE)
-    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    item = models.ForeignKey(Item, on_delete=models.CASCADE, verbose_name='Товар')
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE, verbose_name='Объект корзины')
     quantity = models.PositiveIntegerField(default=1, verbose_name='Количество')
 
     class Meta:
         verbose_name='Корзина-инфо'
+        verbose_name_plural='Корзины-информация'
+
+    def __str__(self):
+        return str(self.cart) + '-' + str(self.item)
 
 
 class Order(models.Model):
     date = models.DateTimeField(auto_now_add=False)
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, unique=True)
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     item = models.ManyToManyField(Item, through='OrderInfo')
 
 

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "shop/base.html" %}
 {% load filters %}
 
 {% block title %} Item information {% endblock %}
@@ -18,12 +18,7 @@
         <img src="{{ STATIC_URL }}/{{ item.image }}" width="120">
 
         <p>{{ item.description }}</p>
-        <form method="post" action="../cart/">
-          <input type="hidden" name="csrfmiddlewaretoken"
-                 value="N4vcBqzjoYkU7OTDuAT8hq8srpvYX44nJsswuP7e3EYg0Hq8DgxuR0eiXWbSr5RZ">
-          <input type="hidden" name="merchandise_id" value="1">
-          <input type="submit" class="btn btn-secondary" value="Добавить в корзину »">
-        </form>
+        {% include 'shop/add_to_cart_btn.html' %}
       </div>
     </div>
 

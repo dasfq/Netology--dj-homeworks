@@ -1,5 +1,5 @@
-from django.shortcuts import render, redirect
-from .models import Article, Category, Item, CustomUser, Review
+from django.shortcuts import render, redirect, HttpResponseRedirect
+from .models import Article, Category, Item, CustomUser, Review, Cart, CartInfo
 from django.core.paginator import Paginator
 from django.contrib.auth import views as auth_views
 from .forms import UserForm, ReviewForm
@@ -7,6 +7,8 @@ from django.shortcuts import reverse
 import urllib
 from django.contrib.auth import get_user_model
 from datetime import datetime
+from django.contrib.auth.decorators import login_required
+from functools import reduce
 
 
 
@@ -39,14 +41,33 @@ def item_page(request, pk):
     }
     return render(request, template_name, context)
 
-def add_cart(request):
+
+@login_required
+def add_to_cart(request, pk):
+    redirect_to = request.GET.get('next')
     if request.method == 'POST':
-        pass
+        user = request.user
+        item = Item.objects.get(id=pk)
+        cart, is_created = Cart.objects.get_or_create(user=user)
+        cart_info, is_created = CartInfo.objects.get_or_create(cart=cart, item=item)
+        if not is_created:
+            cart_info.quantity += 1
+            cart_info.save()
+        return HttpResponseRedirect(redirect_to)
+
 
 def cart(request):
     template_name = 'cart.html'
-    context = {}
+    user = request.user
+    cart = Cart.objects.get(user=user)
+    cart_info = CartInfo.objects.filter(cart=cart)
+    total_qty = sum([x.quantity for x in cart_info])
+    context = {
+        'cart': cart_info,
+        'total': total_qty
+    }
     return render(request, template_name, context)
+
 
 def empty_section(request):
     template_name = 'empty_section.html'

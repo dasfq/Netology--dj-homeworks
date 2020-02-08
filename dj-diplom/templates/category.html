@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "shop/base.html" %}
 {% load static %}
 
 {% block content %}
@@ -22,9 +22,7 @@
 
         </a>
 
-        <form>
-          <input type="submit" class="btn btn-secondary" value="Добавить в корзину »">
-        </form>
+        {% include 'shop/add_to_cart_btn.html' %}
       </div>
 
       {% endfor %}
