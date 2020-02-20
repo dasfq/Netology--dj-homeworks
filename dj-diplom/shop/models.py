@@ -85,8 +85,7 @@ class Cart(models.Model):
     def make_order(self):
         # user = self.cart.user
         # order = Order.objects.create(user=user)
-
-        print('yo12312312')
+        pass
 
 
 class CartInfo(models.Model):
