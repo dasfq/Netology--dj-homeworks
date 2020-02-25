@@ -169,8 +169,8 @@
   "model": "shop.customuser",
   "pk": 10,
   "fields": {
-    "password": "pbkdf2_sha256$100000$TnsSH8Jl7HEF$intL+csIhgVdh/WtNtOr6n4vcN78isQZYISvVrjvTaY=",
-    "last_login": "2020-02-08T11:43:16.872Z",
+    "password": "pbkdf2_sha256$180000$5ehx8Y1go9PC$6mMjNySUDWrdrFxvKSWXoTM3stOUqZhw7AWMRCXkSYg=",
+    "last_login": "2020-02-25T18:48:17.427Z",
     "first_name": "",
     "last_name": "",
     "is_staff": true,
@@ -550,6 +550,17 @@
     "text": "\u041d\u043e\u0440\u043c, \u0448\u0435\u044f \u043d\u0435 \u0431\u043e\u043b\u0438\u0442!",
     "date": "2020-02-08T22:53:24.632Z",
     "item": 8
+  }
+},
+{
+  "model": "shop.review",
+  "pk": 17,
+  "fields": {
+    "user": 10,
+    "stars": 1,
+    "text": "\u0422\u0415\u0441\u0442",
+    "date": "2020-02-25T19:14:48.652Z",
+    "item": 1
   }
 },
 {

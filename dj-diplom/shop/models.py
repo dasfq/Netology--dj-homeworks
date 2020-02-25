@@ -19,7 +19,7 @@ class Category(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length=200, null=False, default="", verbose_name='Заголовок')
     sub_title = models.CharField(max_length=200, null=False, default="", verbose_name='Подзаголовок')
-    date_created = models.DateTimeField(auto_now_add=False, verbose_name='Дата создания')
+    date_created = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     category = models.ForeignKey(Category, default="", null=False, on_delete=models.CASCADE, verbose_name='Категория')
 
     class Meta:
@@ -63,7 +63,7 @@ class Review(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, verbose_name='Пользователь')
     stars = models.PositiveIntegerField(verbose_name='Рейтинг')
     text = models.CharField(max_length=200, null=True, verbose_name='Текст')
-    date = models.DateTimeField(auto_now_add=False, verbose_name='Дата отзыва')
+    date = models.DateTimeField(auto_now_add=True, verbose_name='Дата отзыва')
     item = models.ForeignKey(Item, on_delete=models.CASCADE, null=True, verbose_name="Отзывы")
 
     class Meta:
@@ -102,7 +102,7 @@ class CartInfo(models.Model):
 
 
 class Order(models.Model):
-    date = models.DateTimeField(auto_now_add=False, null=True)
+    date = models.DateTimeField(auto_now_add=True, null=True)
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     item = models.ManyToManyField(Item, through='OrderInfo')
 

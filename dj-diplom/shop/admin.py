@@ -22,6 +22,8 @@ class CartInfoAdmin(admin.ModelAdmin):
 
 
 class OrderAdmin(admin.ModelAdmin):
+    # list_display = ("date", 'user')
+    # inlines = ["date", 'user', 'item']
     pass
 
 class OrderInfoAdmin(admin.ModelAdmin):
