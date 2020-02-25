@@ -1,125 +1,5 @@
 [
 {
-  "model": "contenttypes.contenttype",
-  "pk": 1,
-  "fields": {
-    "app_label": "admin",
-    "model": "logentry"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 2,
-  "fields": {
-    "app_label": "auth",
-    "model": "permission"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 3,
-  "fields": {
-    "app_label": "auth",
-    "model": "group"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 4,
-  "fields": {
-    "app_label": "contenttypes",
-    "model": "contenttype"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 5,
-  "fields": {
-    "app_label": "sessions",
-    "model": "session"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 6,
-  "fields": {
-    "app_label": "shop",
-    "model": "customuser"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 7,
-  "fields": {
-    "app_label": "shop",
-    "model": "article"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 8,
-  "fields": {
-    "app_label": "shop",
-    "model": "cart"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 9,
-  "fields": {
-    "app_label": "shop",
-    "model": "cartinfo"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 10,
-  "fields": {
-    "app_label": "shop",
-    "model": "category"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 11,
-  "fields": {
-    "app_label": "shop",
-    "model": "item"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 12,
-  "fields": {
-    "app_label": "shop",
-    "model": "order"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 13,
-  "fields": {
-    "app_label": "shop",
-    "model": "orderinfo"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 14,
-  "fields": {
-    "app_label": "shop",
-    "model": "review"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "pnekgssk95ibc4tuepqu5exsdvjk5had",
-  "fields": {
-    "session_data": "OWYwOWExMzQ4YWY5Mzg4NjEwMTgyYmE0ZjgzYmUwNjMxN2M2MTdmODp7Il9hdXRoX3VzZXJfaWQiOiI5IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmZTMzNWFhMzlkNjFiYzc2YjRmNzVlN2Q3N2I5ODljMzlkNWE2ZDMxIn0=",
-    "expire_date": "2020-02-22T17:53:04.798Z"
-  }
-},
-{
   "model": "shop.category",
   "pk": 1,
   "fields": {
@@ -175,6 +55,150 @@
     "sub_title": "\u041a\u0443\u043f\u0438\u0442\u0435 \u044d\u0442\u0438 \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u044b\u0435 \u0442\u043e\u0432\u0430\u0440\u044b",
     "date_created": "2018-08-30T19:26:52Z",
     "category": 1
+  }
+},
+{
+  "model": "shop.customuser",
+  "pk": 2,
+  "fields": {
+    "password": "1q1q1q1q",
+    "last_login": null,
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-02-05T18:51:06.946Z",
+    "username": "\u041e\u043b\u0435\u0441\u044c",
+    "email": "two@mail.ru",
+    "is_superuser": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "shop.customuser",
+  "pk": 3,
+  "fields": {
+    "password": "1q1q1q1q",
+    "last_login": null,
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-02-05T18:51:06.947Z",
+    "username": "\u041e\u043b\u044c\u0433\u0430 \u041f\u0435\u0442\u0440\u043e\u0432\u043d\u0430",
+    "email": "three@mail.ru",
+    "is_superuser": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "shop.customuser",
+  "pk": 4,
+  "fields": {
+    "password": "1q1q1q1q",
+    "last_login": null,
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-02-05T18:51:06.947Z",
+    "username": "Zoomer2020",
+    "email": "four@mail.ru",
+    "is_superuser": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "shop.customuser",
+  "pk": 5,
+  "fields": {
+    "password": "1q1q1q1q",
+    "last_login": null,
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-02-05T18:51:06Z",
+    "username": "\u0414\u0436\u0430\u043c\u0431\u0435\u043a",
+    "email": "one@mail.ru",
+    "is_superuser": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "shop.customuser",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$yjhg1hAOjONK$//5VPYYQ7RcTHeQb1s+VXrOXXVRIs+YayzKI7zn28K4=",
+    "last_login": "2020-02-05T19:11:38.155Z",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-02-05T19:06:03.520Z",
+    "username": "",
+    "email": "test@test.com",
+    "is_superuser": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "shop.customuser",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$CqZBPtQnnTMD$NzerBveCsvAV59of7Wxz5IyiJKfnxvRwGrjwt20c5TA=",
+    "last_login": "2020-02-08T17:53:04.596Z",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-02-05T19:38:42.796Z",
+    "username": "",
+    "email": "qwe@qwe.qwe",
+    "is_superuser": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "shop.customuser",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$TnsSH8Jl7HEF$intL+csIhgVdh/WtNtOr6n4vcN78isQZYISvVrjvTaY=",
+    "last_login": "2020-02-08T11:43:16.872Z",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-02-05T19:40:05Z",
+    "username": "admin",
+    "email": "admin@mail.com",
+    "is_superuser": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "shop.customuser",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$lrjiuc1mjlUs$29A1skWJvYmYfzP6CtvWVOh4t15DSxUMTgJ1NRf5+Xw=",
+    "last_login": "2020-02-06T19:33:13.025Z",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-02-06T19:14:42.037Z",
+    "username": "",
+    "email": "qwe@qwe.com",
+    "is_superuser": true,
+    "groups": [],
+    "user_permissions": []
   }
 },
 {
@@ -386,645 +410,6 @@
   }
 },
 {
-  "model": "shop.cartinfo",
-  "pk": 7,
-  "fields": {
-    "item": 2,
-    "cart": 8,
-    "quantity": 1
-  }
-},
-{
-  "model": "shop.orderinfo",
-  "pk": 16,
-  "fields": {
-    "order": 9,
-    "item": 2,
-    "quantity": 3
-  }
-},
-{
-  "model": "shop.orderinfo",
-  "pk": 17,
-  "fields": {
-    "order": 9,
-    "item": 1,
-    "quantity": 3
-  }
-},
-{
-  "model": "shop.orderinfo",
-  "pk": 18,
-  "fields": {
-    "order": 9,
-    "item": 8,
-    "quantity": 3
-  }
-},
-{
-  "model": "shop.orderinfo",
-  "pk": 19,
-  "fields": {
-    "order": 10,
-    "item": 2,
-    "quantity": 3
-  }
-},
-{
-  "model": "shop.orderinfo",
-  "pk": 20,
-  "fields": {
-    "order": 10,
-    "item": 1,
-    "quantity": 1
-  }
-},
-{
-  "model": "shop.orderinfo",
-  "pk": 21,
-  "fields": {
-    "order": 10,
-    "item": 8,
-    "quantity": 2
-  }
-},
-{
-  "model": "shop.orderinfo",
-  "pk": 22,
-  "fields": {
-    "order": 11,
-    "item": 2,
-    "quantity": 3
-  }
-},
-{
-  "model": "shop.orderinfo",
-  "pk": 23,
-  "fields": {
-    "order": 11,
-    "item": 1,
-    "quantity": 1
-  }
-},
-{
-  "model": "shop.orderinfo",
-  "pk": 24,
-  "fields": {
-    "order": 11,
-    "item": 8,
-    "quantity": 2
-  }
-},
-{
-  "model": "shop.orderinfo",
-  "pk": 25,
-  "fields": {
-    "order": 13,
-    "item": 6,
-    "quantity": 1
-  }
-},
-{
-  "model": "shop.orderinfo",
-  "pk": 26,
-  "fields": {
-    "order": 13,
-    "item": 7,
-    "quantity": 2
-  }
-},
-{
-  "model": "shop.orderinfo",
-  "pk": 27,
-  "fields": {
-    "order": 13,
-    "item": 8,
-    "quantity": 1
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 1,
-  "fields": {
-    "name": "Can add log entry",
-    "content_type": 1,
-    "codename": "add_logentry"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 2,
-  "fields": {
-    "name": "Can change log entry",
-    "content_type": 1,
-    "codename": "change_logentry"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 3,
-  "fields": {
-    "name": "Can delete log entry",
-    "content_type": 1,
-    "codename": "delete_logentry"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 4,
-  "fields": {
-    "name": "Can add permission",
-    "content_type": 2,
-    "codename": "add_permission"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 5,
-  "fields": {
-    "name": "Can change permission",
-    "content_type": 2,
-    "codename": "change_permission"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 6,
-  "fields": {
-    "name": "Can delete permission",
-    "content_type": 2,
-    "codename": "delete_permission"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 7,
-  "fields": {
-    "name": "Can add group",
-    "content_type": 3,
-    "codename": "add_group"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 8,
-  "fields": {
-    "name": "Can change group",
-    "content_type": 3,
-    "codename": "change_group"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 9,
-  "fields": {
-    "name": "Can delete group",
-    "content_type": 3,
-    "codename": "delete_group"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 10,
-  "fields": {
-    "name": "Can add content type",
-    "content_type": 4,
-    "codename": "add_contenttype"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 11,
-  "fields": {
-    "name": "Can change content type",
-    "content_type": 4,
-    "codename": "change_contenttype"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 12,
-  "fields": {
-    "name": "Can delete content type",
-    "content_type": 4,
-    "codename": "delete_contenttype"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 13,
-  "fields": {
-    "name": "Can add session",
-    "content_type": 5,
-    "codename": "add_session"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 14,
-  "fields": {
-    "name": "Can change session",
-    "content_type": 5,
-    "codename": "change_session"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 15,
-  "fields": {
-    "name": "Can delete session",
-    "content_type": 5,
-    "codename": "delete_session"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 16,
-  "fields": {
-    "name": "Can add user",
-    "content_type": 6,
-    "codename": "add_customuser"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 17,
-  "fields": {
-    "name": "Can change user",
-    "content_type": 6,
-    "codename": "change_customuser"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 18,
-  "fields": {
-    "name": "Can delete user",
-    "content_type": 6,
-    "codename": "delete_customuser"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 19,
-  "fields": {
-    "name": "Can add \u0421\u0442\u0430\u0442\u044c\u044f",
-    "content_type": 7,
-    "codename": "add_article"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 20,
-  "fields": {
-    "name": "Can change \u0421\u0442\u0430\u0442\u044c\u044f",
-    "content_type": 7,
-    "codename": "change_article"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 21,
-  "fields": {
-    "name": "Can delete \u0421\u0442\u0430\u0442\u044c\u044f",
-    "content_type": 7,
-    "codename": "delete_article"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 22,
-  "fields": {
-    "name": "Can add \u041a\u043e\u0440\u0437\u0438\u043d\u0430",
-    "content_type": 8,
-    "codename": "add_cart"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 23,
-  "fields": {
-    "name": "Can change \u041a\u043e\u0440\u0437\u0438\u043d\u0430",
-    "content_type": 8,
-    "codename": "change_cart"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 24,
-  "fields": {
-    "name": "Can delete \u041a\u043e\u0440\u0437\u0438\u043d\u0430",
-    "content_type": 8,
-    "codename": "delete_cart"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 25,
-  "fields": {
-    "name": "Can add \u041a\u043e\u0440\u0437\u0438\u043d\u0430-\u0438\u043d\u0444\u043e",
-    "content_type": 9,
-    "codename": "add_cartinfo"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 26,
-  "fields": {
-    "name": "Can change \u041a\u043e\u0440\u0437\u0438\u043d\u0430-\u0438\u043d\u0444\u043e",
-    "content_type": 9,
-    "codename": "change_cartinfo"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 27,
-  "fields": {
-    "name": "Can delete \u041a\u043e\u0440\u0437\u0438\u043d\u0430-\u0438\u043d\u0444\u043e",
-    "content_type": 9,
-    "codename": "delete_cartinfo"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 28,
-  "fields": {
-    "name": "Can add \u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f \u0442\u043e\u0432\u0430\u0440\u0430",
-    "content_type": 10,
-    "codename": "add_category"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 29,
-  "fields": {
-    "name": "Can change \u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f \u0442\u043e\u0432\u0430\u0440\u0430",
-    "content_type": 10,
-    "codename": "change_category"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 30,
-  "fields": {
-    "name": "Can delete \u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f \u0442\u043e\u0432\u0430\u0440\u0430",
-    "content_type": 10,
-    "codename": "delete_category"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 31,
-  "fields": {
-    "name": "Can add \u0422\u043e\u0432\u0430\u0440",
-    "content_type": 11,
-    "codename": "add_item"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 32,
-  "fields": {
-    "name": "Can change \u0422\u043e\u0432\u0430\u0440",
-    "content_type": 11,
-    "codename": "change_item"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 33,
-  "fields": {
-    "name": "Can delete \u0422\u043e\u0432\u0430\u0440",
-    "content_type": 11,
-    "codename": "delete_item"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 34,
-  "fields": {
-    "name": "Can add order",
-    "content_type": 12,
-    "codename": "add_order"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 35,
-  "fields": {
-    "name": "Can change order",
-    "content_type": 12,
-    "codename": "change_order"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 36,
-  "fields": {
-    "name": "Can delete order",
-    "content_type": 12,
-    "codename": "delete_order"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 37,
-  "fields": {
-    "name": "Can add order info",
-    "content_type": 13,
-    "codename": "add_orderinfo"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 38,
-  "fields": {
-    "name": "Can change order info",
-    "content_type": 13,
-    "codename": "change_orderinfo"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 39,
-  "fields": {
-    "name": "Can delete order info",
-    "content_type": 13,
-    "codename": "delete_orderinfo"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 40,
-  "fields": {
-    "name": "Can add \u041e\u0442\u0437\u044b\u0432",
-    "content_type": 14,
-    "codename": "add_review"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 41,
-  "fields": {
-    "name": "Can change \u041e\u0442\u0437\u044b\u0432",
-    "content_type": 14,
-    "codename": "change_review"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 42,
-  "fields": {
-    "name": "Can delete \u041e\u0442\u0437\u044b\u0432",
-    "content_type": 14,
-    "codename": "delete_review"
-  }
-},
-{
-  "model": "shop.customuser",
-  "pk": 2,
-  "fields": {
-    "password": "1q1q1q1q",
-    "last_login": null,
-    "first_name": "",
-    "last_name": "",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2020-02-05T18:51:06.946Z",
-    "username": "\u041e\u043b\u0435\u0441\u044c",
-    "email": "two@mail.ru",
-    "is_superuser": false,
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "shop.customuser",
-  "pk": 3,
-  "fields": {
-    "password": "1q1q1q1q",
-    "last_login": null,
-    "first_name": "",
-    "last_name": "",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2020-02-05T18:51:06.947Z",
-    "username": "\u041e\u043b\u044c\u0433\u0430 \u041f\u0435\u0442\u0440\u043e\u0432\u043d\u0430",
-    "email": "three@mail.ru",
-    "is_superuser": false,
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "shop.customuser",
-  "pk": 4,
-  "fields": {
-    "password": "1q1q1q1q",
-    "last_login": null,
-    "first_name": "",
-    "last_name": "",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2020-02-05T18:51:06.947Z",
-    "username": "Zoomer2020",
-    "email": "four@mail.ru",
-    "is_superuser": false,
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "shop.customuser",
-  "pk": 5,
-  "fields": {
-    "password": "1q1q1q1q",
-    "last_login": null,
-    "first_name": "",
-    "last_name": "",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2020-02-05T18:51:06Z",
-    "username": "\u0414\u0436\u0430\u043c\u0431\u0435\u043a",
-    "email": "one@mail.ru",
-    "is_superuser": false,
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "shop.customuser",
-  "pk": 6,
-  "fields": {
-    "password": "pbkdf2_sha256$100000$yjhg1hAOjONK$//5VPYYQ7RcTHeQb1s+VXrOXXVRIs+YayzKI7zn28K4=",
-    "last_login": "2020-02-05T19:11:38.155Z",
-    "first_name": "",
-    "last_name": "",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2020-02-05T19:06:03.520Z",
-    "username": "",
-    "email": "test@test.com",
-    "is_superuser": false,
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "shop.customuser",
-  "pk": 9,
-  "fields": {
-    "password": "pbkdf2_sha256$100000$CqZBPtQnnTMD$NzerBveCsvAV59of7Wxz5IyiJKfnxvRwGrjwt20c5TA=",
-    "last_login": "2020-02-08T17:53:04.596Z",
-    "first_name": "",
-    "last_name": "",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2020-02-05T19:38:42.796Z",
-    "username": "",
-    "email": "qwe@qwe.qwe",
-    "is_superuser": true,
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "shop.customuser",
-  "pk": 10,
-  "fields": {
-    "password": "pbkdf2_sha256$100000$TnsSH8Jl7HEF$intL+csIhgVdh/WtNtOr6n4vcN78isQZYISvVrjvTaY=",
-    "last_login": "2020-02-08T11:43:16.872Z",
-    "first_name": "",
-    "last_name": "",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2020-02-05T19:40:05Z",
-    "username": "admin",
-    "email": "admin@mail.com",
-    "is_superuser": true,
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "shop.customuser",
-  "pk": 11,
-  "fields": {
-    "password": "pbkdf2_sha256$100000$lrjiuc1mjlUs$29A1skWJvYmYfzP6CtvWVOh4t15DSxUMTgJ1NRf5+Xw=",
-    "last_login": "2020-02-06T19:33:13.025Z",
-    "first_name": "",
-    "last_name": "",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2020-02-06T19:14:42.037Z",
-    "username": "",
-    "email": "qwe@qwe.com",
-    "is_superuser": true,
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
   "model": "shop.review",
   "pk": 3,
   "fields": {
@@ -1182,6 +567,15 @@
   }
 },
 {
+  "model": "shop.cartinfo",
+  "pk": 7,
+  "fields": {
+    "item": 2,
+    "cart": 8,
+    "quantity": 1
+  }
+},
+{
   "model": "shop.order",
   "pk": 9,
   "fields": {
@@ -1219,6 +613,114 @@
   "fields": {
     "date": null,
     "user": 9
+  }
+},
+{
+  "model": "shop.orderinfo",
+  "pk": 16,
+  "fields": {
+    "order": 9,
+    "item": 2,
+    "quantity": 3
+  }
+},
+{
+  "model": "shop.orderinfo",
+  "pk": 17,
+  "fields": {
+    "order": 9,
+    "item": 1,
+    "quantity": 3
+  }
+},
+{
+  "model": "shop.orderinfo",
+  "pk": 18,
+  "fields": {
+    "order": 9,
+    "item": 8,
+    "quantity": 3
+  }
+},
+{
+  "model": "shop.orderinfo",
+  "pk": 19,
+  "fields": {
+    "order": 10,
+    "item": 2,
+    "quantity": 3
+  }
+},
+{
+  "model": "shop.orderinfo",
+  "pk": 20,
+  "fields": {
+    "order": 10,
+    "item": 1,
+    "quantity": 1
+  }
+},
+{
+  "model": "shop.orderinfo",
+  "pk": 21,
+  "fields": {
+    "order": 10,
+    "item": 8,
+    "quantity": 2
+  }
+},
+{
+  "model": "shop.orderinfo",
+  "pk": 22,
+  "fields": {
+    "order": 11,
+    "item": 2,
+    "quantity": 3
+  }
+},
+{
+  "model": "shop.orderinfo",
+  "pk": 23,
+  "fields": {
+    "order": 11,
+    "item": 1,
+    "quantity": 1
+  }
+},
+{
+  "model": "shop.orderinfo",
+  "pk": 24,
+  "fields": {
+    "order": 11,
+    "item": 8,
+    "quantity": 2
+  }
+},
+{
+  "model": "shop.orderinfo",
+  "pk": 25,
+  "fields": {
+    "order": 13,
+    "item": 6,
+    "quantity": 1
+  }
+},
+{
+  "model": "shop.orderinfo",
+  "pk": 26,
+  "fields": {
+    "order": 13,
+    "item": 7,
+    "quantity": 2
+  }
+},
+{
+  "model": "shop.orderinfo",
+  "pk": 27,
+  "fields": {
+    "order": 13,
+    "item": 8,
+    "quantity": 1
   }
 },
 {
